@@ -17,12 +17,13 @@ const emojis = [
 ];
 
 function App() {
-  const greeting = "greeting"
+  const greeting = "greeting";
+  const displayAction = false;
 
   return (
     <div className="container">
       <h1 id={greeting}>Hello, World</h1>
-      <p>I am writing JSX</p>
+      {displayAction && <p>I am writing JSX</p>}
       <ul>
       {
         emojis.map(emoji => (
@@ -37,7 +38,7 @@ function App() {
       }
       </ul>
     </div>
-  )
+  );
 }
 
 export default App
