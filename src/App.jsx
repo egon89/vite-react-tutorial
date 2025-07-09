@@ -1,3 +1,5 @@
+import React from 'react';
+import Instructions from './Instructions';
 import './App.css'
 
 const displayEmojiName = event => alert(event.target.id);
@@ -24,6 +26,7 @@ function App() {
     <div className="container">
       <h1 id={greeting}>Hello, World</h1>
       {displayAction && <p>I am writing JSX</p>}
+      <Instructions />
       <ul>
       {
         emojis.map(emoji => (
