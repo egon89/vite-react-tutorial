@@ -3,6 +3,7 @@ import Instructions from '../Instructions/Instructions';
 import AnimalCard from '../AnimalCard/AnimalCard';
 import './App.css'
 import data from './data';
+import Product from '../Product/Product';
 
 const displayEmojiName = event => alert(event.target.id);
 const emojis = [
@@ -69,6 +70,10 @@ function App() {
           ))
         }
       </div>
+
+      <hr />
+
+      <Product />
     </>
   );
 }
