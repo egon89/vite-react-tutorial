@@ -12,7 +12,10 @@ export default function AnimalCard({
   ...props
 }) {
   return (
-    <Card title="Animal">
+    <Card 
+      title="Animal"
+      details={<i>Mammal</i>}
+    >
       <h2>{name}</h2>
       <h4>{size}kg</h4>
       <AnimalDetails
