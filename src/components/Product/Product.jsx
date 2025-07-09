@@ -22,7 +22,6 @@ const products = [
 export default class Product extends Component {
     state = {
         cart: [],
-        total: 0
     }
 
     // Receiving a product as an argument
@@ -30,24 +29,21 @@ export default class Product extends Component {
     // and returns an object that has the cart updated with the new product and the total updated with the new price
     add = (product) => {
         this.setState(state => ({
-          cart: [...state.cart, product.name],
-          total: state.total + product.price
+          cart: [...state.cart, product],
         }))
       }
 
     remove = (product) => {
         this.setState(state => {
-            const productIndex = state.cart.indexOf(product.name);
-            if (productIndex === -1) {
-                return state;
-            }
-
             const cart = [...state.cart]; // avoid mutating the original state
+            const productIndex = cart.findIndex(item => item.name === product.name);
+            if (productIndex < 0) {
+                return;
+            }
             cart.splice(productIndex, 1);
             
             return ({
                 cart,
-                total: state.total - product.price
             })
         })
     }
@@ -58,7 +54,9 @@ export default class Product extends Component {
     }
 
     getTotal = () => {
-        return this.state.total.toLocaleString(undefined, this.currencyOptions)
+        const total = this.state.cart.reduce((totalCost, item) => totalCost + item.price, 0);
+
+        return total.toLocaleString(undefined, this.currencyOptions)
     }
 
     render() {
