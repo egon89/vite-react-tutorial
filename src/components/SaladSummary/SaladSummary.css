@@ -1,0 +1,16 @@
+.salad-summary-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 50px;
+}
+
+.salad-summary-list li {
+  width: 100px;
+}
+
+.salad-summary-wrapper {
+  border-top: 1px solid black;
+  display: flex;
+  padding: 25px;
+}

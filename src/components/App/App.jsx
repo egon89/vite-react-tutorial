@@ -5,6 +5,8 @@ import './App.css'
 import data from './data';
 import Product from '../Product/Product';
 import ProductHook from '../ProductHook/ProductHook';
+import Navigation from '../Navigation/Navigation';
+import SaladMaker from '../SaladMaker/SaladMaker';
 
 const displayEmojiName = event => alert(event.target.id);
 const emojis = [
@@ -79,6 +81,11 @@ function App() {
       <hr />
 
       <ProductHook />
+
+      <hr />
+
+      <Navigation />
+      <SaladMaker />
     </>
   );
 }

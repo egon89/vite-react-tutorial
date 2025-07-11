@@ -1,0 +1,26 @@
+.salad-item-add {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.salad-item-favorite {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.salad-item-image {
+    font-size: 80px;
+}
+
+.salad-item-wrapper {
+    border: 1px solid lightgrey;
+    margin: 20px;
+    padding: 25px;
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+    width: 200px;
+}

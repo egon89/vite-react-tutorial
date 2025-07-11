@@ -1,0 +1,6 @@
+.salad-builder-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 50px;
+    justify-content: center;
+}
