@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import UserContext from '../User/User';
 import './Navigation.css';
 
 export default function Navigation() {
+  const user = useContext(UserContext);
+
   return(
     <div className="navigation-wrapper">
-      Welcome, Kwame
+      Welcome, {user.name}
     </div>
   )
 }

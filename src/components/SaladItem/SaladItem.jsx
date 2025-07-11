@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import UserContext from '../User/User';
 import './SaladItem.css';
 
 export default function SaladItem({ image, name }) {
-  const favorite = true;
+  const { favorites } = useContext(UserContext);
+  const favorite = favorites.includes(name);
+
   return(
     <div className="salad-item-wrapper">
         <h3>

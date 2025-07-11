@@ -7,6 +7,7 @@ import Product from '../Product/Product';
 import ProductHook from '../ProductHook/ProductHook';
 import Navigation from '../Navigation/Navigation';
 import SaladMaker from '../SaladMaker/SaladMaker';
+import UserContext from '../User/User';
 
 const displayEmojiName = event => alert(event.target.id);
 const emojis = [
@@ -29,6 +30,11 @@ function showAdditional(additional) {
     .map(information => `${information[0]}: ${information[1]}`)
     .join('\n');
   alert(alertInformation)
+};
+
+const user = {
+  name: 'John Doe',
+  favorites: ['apple', 'broccoli', 'carrot'],
 };
 
 function App() {
@@ -84,8 +90,15 @@ function App() {
 
       <hr />
 
-      <Navigation />
-      <SaladMaker />
+      
+      {/* 
+        The Provider is a component that sets the data and then wraps some child components. Any wrapped child components will have access to data from the Provider with the useContext Hook.
+        Since the user data will be constant across the project, put it as high up the component tree as you can.
+      */}
+      <UserContext.Provider value={user}>
+        <Navigation />
+        <SaladMaker />
+      </UserContext.Provider>
     </>
   );
 }
